@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+
+<body>
+<h1>student 12 student marks given the array</h1>
+<p id="xyz"></p>
+<script>
+const studentMarks=[35,20,21,55,65,75,90,95,85,80,91,86];
+let mark=prompt("enter a studentMarks");
+function getRankforstudent(studentMarks,mark){
+
+for(let i=0;i<studentMarks.length-1;i++){
+for(let j=0; j<studentMarks.length-1;j++){
+if(studentMarks[j]<studentMarks[j+1]){
+
+ let temp=studentMarks[j];
+ studentMarks[j]=studentMarks[j+1]
+ studentMarks[j+1]=temp;
+ 
+ }
+}
+}
+//95,91,90,86,85,80,75,65,55,35,21,20
+let result='';
+for( let i=0;i<studentMarks.length;i++) {
+if(mark ==studentMarks[i] ){
+ result="Rank of the Student is : "+ (i+1);
+ return result;
+}
+}
+if(result==''){
+return "Invalid marks";
+}
+
+}
+
+document.querySelector("p[id=xyz]").innerHTML=getRankforstudent(studentMarks,mark);
+</script>
+</body>
+</html>
