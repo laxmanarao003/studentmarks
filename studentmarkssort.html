@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+
+<body>
+<h1>student 12 student marks given the array</h1>
+<p id="xyz"></p>
+<p id="abc"></p>
+<script>
+const studentMarks=[35,20,21,55,65,75,90,95,85,80,91,86];
+let mark=prompt("enter the studentMarks")
+ const marks= studentMarks.sort(function(a,b) {return b-a});
+ function getRankforstudent(studentMarks,mark){
+ for(i=0;i<marks.length-1;i++){
+ if(mark==marks[i]){
+ return "Rank of the student:"+ (i+1);
+ }
+ 
+ }
+ if(mark!=marks[i]){
+ return "invalid marks"
+ }
+ }
+ 
+ 
+document.querySelector("p[id=xyz]").innerHTML=marks;
+document.querySelector("p[id=abc]").innerHTML=getRankforstudent(studentMarks,mark);
+
+</script>
+</body>
+</html>
